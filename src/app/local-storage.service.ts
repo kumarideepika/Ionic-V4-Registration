@@ -35,23 +35,24 @@ export class LocalStorageService {
     localStorage.removeItem(name);
   }
  
-//     async get(key: string): Promise<any> {
-//       try {
-//       const result = await this.localstorage.get(key);
-//       console.log('storageGET: ' + key + ': ' + result);
-//       if (result != null) {
-//       return result;
-//       }else{
-//         alert('no')
-//       }
+    async get(key: string): Promise<any> {
+      try {
+      const result = await this.localstorage.get(key);
+      console.log('storageGET: ' + key + ': ' + result);
+      if (result != null) {
+      return result;
+      }else{
+        alert('no')
+      }
       
-//       // return null;
-//       } catch (reason) {
+      // return null;
+      } catch (reason) {
       
-//       console.log(reason);
-//       return null;
-//       }
-// }
+      console.log(reason);
+      return null;
+      }
+}
+
 async setObject(key: string, object: Object) {
 
   try {

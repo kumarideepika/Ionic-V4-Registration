@@ -13,7 +13,7 @@ import { LocalStorageService } from './local-storage.service';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-UserDetails:any;
+userdetails:any;
 
   constructor(
     private platform: Platform,
@@ -22,14 +22,21 @@ UserDetails:any;
     public localstorage :LocalStorageService,
     public navctrl:NavController
       ) {
-        this.UserDetails=this.localstorage.getItemLocally('userdetails');
-        console.log('Hello'+JSON.stringify(this.UserDetails));
+        this.localstorage.getObject('userdetails').then(result => {
+          if (result != null) {
+            this.userdetails=result;
+       console.log(JSON.stringify(this.userdetails));
+       if(this.userdetails!=null){
+        this.setDetails(this.userdetails);
+        console.log('Helo'+JSON.stringify(this.userdetails));
+      }
+          }
+          }).catch(e => {
+          console.log('error: ', e);
+          });
 
     this.initializeApp();
-    if(this.UserDetails!=null){
-      this.setDetails(this.UserDetails);
-      console.log('Helo'+JSON.stringify(this.UserDetails));
-    }
+   
     // events.subscribe("user:created", (user, time) => {
     //   this.UserDetails = user;
     //   if (this.UserDetails !== undefined) {

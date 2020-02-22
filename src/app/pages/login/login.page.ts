@@ -20,8 +20,16 @@ export class LoginPage implements OnInit {
     public router :Router
   ) {
    
-    this.userdetails=this.localstorage.getItemLocally('userdetails');
+    this.localstorage.getObject('userdetails').then(result => {
+      if (result != null) {
+        this.userdetails=result;
    console.log(JSON.stringify(this.userdetails));
+
+      }
+      }).catch(e => {
+      console.log('error: ', e);
+      });
+
    }
    LoginValidation(logindetails){
     if (logindetails.email == "" || logindetails.email == null) {
@@ -34,8 +42,8 @@ export class LoginPage implements OnInit {
       );
     }else{
       console.log(JSON.stringify(this.userdetails));
-      if(this.logindetails.email==this.userdetails.obj.email){
-        if(this.logindetails.password==this.userdetails.obj.password){
+      if(this.logindetails.email==this.userdetails.email){
+        if(this.logindetails.password==this.userdetails.password){
           this.router.navigate(['/dash-board'],{
             queryParams: {
               ProductString : '',

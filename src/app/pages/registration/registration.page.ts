@@ -99,7 +99,7 @@ setDatatoLocalstorage(userdetails){
    mobile:userdetails.mobile_no,
    password:userdetails.password
  }
-  this.localstorage.setItemLocally('userdetails', obj);
+  this.localstorage.setObject('userdetails', userdetails);
   this.presentAlert("Registration Done!", "You have successfully registered", "Okay");
   this.router.navigate(['/login']);
 }

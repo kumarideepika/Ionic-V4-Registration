@@ -10,13 +10,26 @@ import { AlertController,NavController } from '@ionic/angular';
 })
 export class DashBoardPage implements OnInit {
   userdetails:any;
+  userdata={name:'',mobile:'',email:''}
   constructor(
     public localstorage:LocalStorageService,
     public alrt:AlertController,
     public navCtrl:NavController,
   ) {
-    this.userdetails=this.localstorage.getItemLocally('userdetails');
-    console.log(JSON.stringify(this.userdetails));
+
+    this.localstorage.getObject('userdetails').then(result => {
+      if (result != null) {
+        this.userdetails=result;
+        this.userdata.name=this.userdetails.name;
+        this.userdata.email=this.userdetails.email;
+        this.userdata.mobile=this.userdetails.mobile_no;
+
+   console.log(JSON.stringify(this.userdetails));
+
+      }
+      }).catch(e => {
+      console.log('error: ', e);
+      });
 
    }
 
