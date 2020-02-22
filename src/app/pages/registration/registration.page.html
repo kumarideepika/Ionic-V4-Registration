@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button  defaultHref="/"></ion-back-button>
+    </ion-buttons>  
+    <ion-title>Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div align="center">
+    <ion-card>
+      <div class="card-header">All fields are medatory</div>
+      <ion-card-content>
+        <div align="center">
+          <ion-list>
+            <ion-item>
+              <ion-label  position="floating" class="label-tag">Full Name</ion-label>
+              <ion-input  type="text" class="basic-input-tag" [(ngModel)]="Userdata.name" (ionChange)="dynamicValidate(Userdata.name,'name')"></ion-input>
+            </ion-item>
+            <Span *ngIf="validate.Vname" style="color:#E50000;margin-left:-39% !important;font-size: 12px !important;">Please enter valid name.</Span>
+            <ion-item>
+              <ion-label  position="floating" class="label-tag">Email Id</ion-label>
+              <ion-input  type="Email"  class="basic-input-tag" [(ngModel)]="Userdata.email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label  position="floating" class="label-tag">mobile</ion-label>
+              <ion-input  type="tel" maxlength="10"  class="basic-input-tag" [(ngModel)]="Userdata.mobile_no" (ionChange)="dynamicValidate(Userdata.mobile_no,'contact')"></ion-input>
+            </ion-item>
+            <Span *ngIf="validate.Vmobile" style="color:#E50000;margin-left:-39% !important;font-size: 12px !important;">Please enter valid mobile number.</Span>
+
+            <ion-item>
+              <ion-label position="floating" class="label-tag">Password</ion-label>
+              <ion-input  type="Password"  class="basic-input-tag" [(ngModel)]="Userdata.password"></ion-input>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-card-content>
+  
+  </ion-card>
+  <div align="center" >
+    <button  nav-clear class="button roundButton bigButton bluishButton" type="submit" (click)="ValidationReg(Userdata)">Register</button>
+  </div>  
+  </div>
+
+</ion-content>

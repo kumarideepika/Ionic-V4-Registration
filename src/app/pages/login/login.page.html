@@ -1,0 +1,59 @@
+
+<ion-content>
+  <br><br>
+    <div align="center">
+      <img width="82%" src="assets/image/logo.jpg" />
+    </div>
+    <div ion-text align="center">
+      <span style="color:#999;">Please enter your login credentials</span> 
+    </div>
+  <div>
+    <!-- <ion-card> -->
+      
+        <ion-card-content>
+          <div align="center">
+            <ion-list>
+            <ion-item>
+              <ion-label  position="floating" class="label-tag">Email Id</ion-label>
+              <ion-input  type="Email"  class="basic-input-tag" [(ngModel)]="logindetails.email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating" class="label-tag">Password</ion-label>
+              <ion-input  type="Password"  class="basic-input-tag" [(ngModel)]="logindetails.password"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          </div>
+        </ion-card-content>
+
+    <!-- </ion-card> -->
+    <div align="center" >
+      <button  nav-clear class="button roundButton bigButton bluishButton" type="submit" (click)="LoginValidation(logindetails)">Login</button>
+    </div>  <br>
+    <div align="center" routerLink="/registration">Don't have an account?
+      <b ion-text color="darkish">Register</b>
+    </div>
+  </div>
+  <!-- <div align="center">
+    <ion-card>
+      <div class="card-header">
+        <div align="center" style="font-size: 15px;color:#999;">Please enter your login credentials</div>
+        </div>
+      <ion-card-content>
+        <div align="center">
+              <ion-item>
+              <ion-label  position="floating" class="label-tag">Email Id</ion-label>
+              <ion-input  type="Email"  class="basic-input-tag" [(ngModel)]="logindetails.email"></ion-input>
+            </ion-item>
+              <ion-label position="floating" class="label-tag">Password</ion-label>
+              <ion-input  type="Password"  class="basic-input-tag" [(ngModel)]="logindetails.password"></ion-input>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-card-content>
+  </ion-card>
+  <div align="center" >
+    <button  nav-clear class="button roundButton bigButton bluishButton" type="submit" (click)="LoginValidation(logindetails)">Login</button>
+  </div>  
+  </div> -->
+</ion-content>

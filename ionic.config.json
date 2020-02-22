@@ -1,0 +1,8 @@
+{
+  "name": "BigShop",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "38ed7cdb"
+}

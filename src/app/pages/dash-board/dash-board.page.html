@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <!-- <ion-back-button  defaultHref="/tabs"></ion-back-button> -->
+    </ion-buttons>
+    <ion-buttons slot="end" style="font-size: 16px;">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+            </ion-button>
+    </ion-buttons>    
+    <ion-title>DashBoard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+    <div align="center">
+      <img width="82%" src="assets/image/welcome.jpg" />
+    </div>
+    <div ion-text align="center">
+      <span style="color:#00aef8;font-size: 20px;">User Details</span> 
+    </div>
+    <ion-card>
+     <ion-grid>
+       <ion-row class="rowlabel">
+         <ion-col size="4" >Name</ion-col>
+         <ion-col size="2">:</ion-col>
+         <ion-col class="labelu" size="6">{{userdetails.name}}</ion-col>
+       </ion-row>
+       <ion-row class="rowlabel">
+        <ion-col  size="4">Mobile number</ion-col>
+        <ion-col  size="2">:</ion-col>
+        <ion-col  class="labelu"size="6">{{userdetails.mobile}}</ion-col>
+      </ion-row>
+      <ion-row class="rowlabel">
+        <ion-col size="4">Email</ion-col>
+        <ion-col size="2">:</ion-col>
+        <ion-col class="labelu" size="6">{{userdetails.email}}</ion-col>
+      </ion-row>
+     </ion-grid>
+    </ion-card>
+  </div>
+</ion-content>

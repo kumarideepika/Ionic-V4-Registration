@@ -1,0 +1,29 @@
+.card-header{
+    padding: 8px;
+    background-color: #eaeaea;
+    border-bottom: 1px solid #999;
+}
+.label-tag{
+    font-size: 12px;
+    position: fixed;
+    margin-top: 12px;
+}
+.basic-input-tag{
+    font-size: 12px;
+    position: fixed;
+    margin-top: 29px;    
+} 
+.greyish{
+    color:#999;
+}
+
+
+.item-inner{
+    border: solid;
+    margin-left: -32px;
+}
+.item-md.item-label-floating [item-right], .item-md.item-label-stacked [item-end], .item-md.item-label-floating [item-end] {
+    margin-top: 37px;
+    margin-bottom: 7px;
+}
+.item { border-style: none }
